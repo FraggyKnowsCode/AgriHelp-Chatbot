@@ -39,6 +39,11 @@ Or download as ZIP and extract.
 npm install
 \`\`\`
 
+### Use this if npm install fails, then try npm install
+\`\`\`bash
+npm install vaul@latest
+\`\`\`
+
 ### Step 3: Run the Development Server
 
 \`\`\`bash
@@ -123,6 +128,7 @@ Edit `/components/floating-chat-widget.tsx` to change button position, colors, o
 | "Failed to load" | Verify your OpenRouter API key is valid |
 | Chat not responding | Check API key and internet connection |
 | Rate limit error | Wait a moment and try again |
+|npm install fails with ERESOLVE error| This project uses React 19. A dependency (like vaul) may be on a version that doesn't support it. Try running npm install <package-name>@latest (e.g., npm install vaul@latest) and then run npm install again.|
 
 ## 🚀 Deployment
 
