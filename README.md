@@ -23,27 +23,23 @@ A floating chatbot widget powered by Agri Help that provides agricultural assist
 
 \`\`\`bash
 git clone <repository-url>
-cd agri-help-chatbot
-\`\`\`
+cd agri-help-chatbot\`\`\`
 
 Or download as ZIP and extract.
 
 ### Step 2: Install Dependencies
 
 \`\`\`bash
-npm install
-\`\`\`
+npm install\`\`\`
 
 ### Use this if npm install fails, then try npm install
 \`\`\`bash
-npm install vaul@latest
-\`\`\`
+npm install vaul@latest\`\`\`
 
 ### Step 3: Run the Development Server
 
 \`\`\`bash
-npm run dev
-\`\`\`
+npm run dev\`\`\`
 
 Navigate to `http://localhost:3000`
 
@@ -56,7 +52,7 @@ Navigate to `http://localhost:3000`
 
 ## 📁 Project Structure
 
-agri-help-chatbot/
+\`\`\`agri-help-chatbot/
 ├── app/
 │   ├── page.tsx                 # Welcome page
 │   ├── layout.tsx               # Root layout
@@ -70,7 +66,7 @@ agri-help-chatbot/
 │   ├── chat-messages.tsx        # Message display
 │   ├── api-key-form.tsx         # API key form
 │   └── ui/                      # shadcn UI components
-└── README.md
+└── README.md\`\`\`
 
 
 ## 🔧 Integrating into Your Website
@@ -91,8 +87,7 @@ export default function YourPage() {
       <FloatingChatWidget />
     </>
   )
-}
-\`\`\`
+}\`\`\`
 
 ## 🔑 API Key Management
 
@@ -129,8 +124,7 @@ Edit `/components/floating-chat-widget.tsx` to change button position, colors, o
 
 \`\`\`bash
 npm run build
-npm start
-\`\`\`
+npm start\`\`\`
 
 
 **Happy farming!** 🌾
