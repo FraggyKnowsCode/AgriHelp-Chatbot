@@ -56,7 +56,6 @@ Navigate to `http://localhost:3000`
 
 ## 📁 Project Structure
 
-\`\`\`
 agri-help-chatbot/
 ├── app/
 │   ├── page.tsx                 # Welcome page
@@ -72,7 +71,7 @@ agri-help-chatbot/
 │   ├── api-key-form.tsx         # API key form
 │   └── ui/                      # shadcn UI components
 └── README.md
-\`\`\`
+
 
 ## 🔧 Integrating into Your Website
 
@@ -125,16 +124,6 @@ Edit `/components/floating-chat-widget.tsx` to change button position, colors, o
 | Rate limit error | Wait a moment and try again |
 |npm install fails with ERESOLVE error| This project uses React 19. A dependency (like vaul) may be on a version that doesn't support it. Try running npm install <package-name>@latest (e.g., npm install vaul@latest) and then run npm install again.|
 
-## 🚀 Deployment
-
-### Deploy to Vercel
-
-\`\`\`bash
-npm i -g vercel
-vercel
-\`\`\`
-
-Or connect your GitHub repo to Vercel for automatic deployments.
 
 ## 📦 Build for Production
 
