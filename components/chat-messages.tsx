@@ -2,6 +2,7 @@
 
 import { useEffect, useRef } from "react"
 import { Card } from "@/components/ui/card"
+import type { JSX } from "react/jsx-runtime"
 
 interface Message {
   role: "user" | "assistant"
@@ -11,6 +12,49 @@ interface Message {
 interface ChatMessagesProps {
   messages: Message[]
   isLoading: boolean
+}
+
+function renderMarkdown(text: string) {
+  // Parse markdown and convert to JSX elements
+  const lines = text.split("\n")
+  const elements: JSX.Element[] = []
+
+  for (let i = 0; i < lines.length; i++) {
+    const line = lines[i]
+
+    // Handle headings (##)
+    if (line.startsWith("## ")) {
+      elements.push(
+        <h3 key={`heading-${i}`} className="font-bold text-lg text-green-900 mt-2 mb-1">
+          {line.slice(3)}
+        </h3>,
+      )
+    }
+    // Handle bold text and bullet points
+    else if (line.startsWith("- ")) {
+      const content = line.slice(2)
+      // Replace **text** with bold spans
+      const parts = content.split(/\*\*(.*?)\*\*/g)
+      elements.push(
+        <li key={`bullet-${i}`} className="ml-4 text-green-900">
+          {parts.map((part, idx) => (idx % 2 === 1 ? <strong key={idx}>{part}</strong> : part))}
+        </li>,
+      )
+    } else if (line.trim()) {
+      // Handle regular text with bold formatting
+      const parts = line.split(/\*\*(.*?)\*\*/g)
+      elements.push(
+        <p key={`text-${i}`} className="text-green-900 mb-1">
+          {parts.map((part, idx) => (idx % 2 === 1 ? <strong key={idx}>{part}</strong> : part))}
+        </p>,
+      )
+    } else {
+      // Empty line for spacing
+      elements.push(<div key={`space-${i}`} className="h-1" />)
+    }
+  }
+
+  return <div className="space-y-1">{elements}</div>
 }
 
 export function ChatMessages({ messages, isLoading }: ChatMessagesProps) {
@@ -44,7 +88,7 @@ export function ChatMessages({ messages, isLoading }: ChatMessagesProps) {
                   : "bg-green-50 text-green-900 border border-green-200"
               }`}
             >
-              {message.content}
+              {message.role === "assistant" ? renderMarkdown(message.content) : message.content}
             </Card>
           </div>
         ))}

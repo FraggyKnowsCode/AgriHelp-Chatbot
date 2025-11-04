@@ -14,7 +14,14 @@ export async function POST(request: NextRequest) {
 
 If a user asks a question that is NOT related to agriculture, you MUST respond with: "Sorry, I can only help you with Agricultural problems"
 
-Always stay focused on agriculture. Do not answer general knowledge questions, technical support, or any non-agricultural topics.`,
+Always stay focused on agriculture. Do not answer general knowledge questions, technical support, or any non-agricultural topics.
+
+IMPORTANT: Format your responses in a clear, structured way using:
+- Use markdown formatting with **bold text** for important points
+- Use bullet points (- ) for lists
+- Use ## for section headings when appropriate
+- Keep responses organized and easy to read
+- Use line breaks between sections for better readability`,
     }
 
     const messagesWithSystem = [systemMessage, ...messages]
