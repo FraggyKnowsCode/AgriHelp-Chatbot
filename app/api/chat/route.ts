@@ -8,6 +8,17 @@ export async function POST(request: NextRequest) {
       return NextResponse.json({ error: "API key is required" }, { status: 400 })
     }
 
+    const systemMessage = {
+      role: "system",
+      content: `You are Agri Help, an agricultural assistant powered by TeamBen4. Your purpose is to provide helpful advice and information ONLY about agriculture-related topics, including but not limited to: crop cultivation, farming techniques, pest management, soil health, irrigation, fertilizers, livestock management, farm equipment, agricultural best practices, crop diseases, and farming sustainability.
+
+If a user asks a question that is NOT related to agriculture, you MUST respond with: "Sorry, I can only help you with Agricultural problems"
+
+Always stay focused on agriculture. Do not answer general knowledge questions, technical support, or any non-agricultural topics.`,
+    }
+
+    const messagesWithSystem = [systemMessage, ...messages]
+
     const response = await fetch("https://openrouter.ai/api/v1/chat/completions", {
       method: "POST",
       headers: {
@@ -18,7 +29,7 @@ export async function POST(request: NextRequest) {
       },
       body: JSON.stringify({
         model: "meta-llama/llama-3.1-70b-instruct",
-        messages,
+        messages: messagesWithSystem,
         temperature: 0.7,
         max_tokens: 2048,
         stream: true,
