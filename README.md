@@ -1,17 +1,12 @@
-# Agri Help - Agricultural Chatbot Widget
+# Agri Help - Agricultural Chatbot
 
 A floating chatbot widget powered by Agri Help that provides agricultural assistance. This is a Next.js application that can be integrated into your existing website.
-
-*Automatically synced with your [v0.app](https://v0.app) deployments*
-
-[![Deployed on Vercel](https://img.shields.io/badge/Deployed%20on-Vercel-black?style=for-the-badge&logo=vercel)](https://vercel.com/fraggyknowscodes-projects/v0-web-app-chatbot-integration)
-[![Built with v0](https://img.shields.io/badge/Built%20with-v0.app-black?style=for-the-badge)](https://v0.app/chat/tX2WCfUAoKc)
 
 ## 🌾 Features
 
 - **Floating Widget**: Unobtrusive chat button in the bottom-right corner that doesn't interrupt your website
 - **Agriculture-Focused**: Only responds to agriculture-related questions
-- **Persistent Storage**: API key is saved locally for seamless experience
+- **Persistent Storage**: API key is saved locally for a seamless experience
 - **Beautiful UI**: Green and off-white agricultural theme
 - **Real-time Streaming**: Responses stream in real-time for better UX
 - **Formatted Responses**: Bot responses include bullet points, bold text, and headlines for readability
@@ -148,17 +143,6 @@ npm run build
 npm start
 \`\`\`
 
-## Overview
-
-This repository stays in sync with your deployed chats on [v0.app](https://v0.app). Any changes made to your deployed app are automatically pushed to this repository.
-
-## Build your app
-
-Continue building your app on:
-
-**[https://v0.app/chat/tX2WCfUAoKc](https://v0.app/chat/tX2WCfUAoKc)**
-
----
 
 **Happy farming!** 🌾
 
